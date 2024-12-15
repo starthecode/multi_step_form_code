@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&family=Cairo:wght@200..1000&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .form-control {
+    @apply mt-1 block w-full border-0 bg-transparent focus:border-purple-500 focus:ring-purple-500 sm:text-sm;
+  }
+
+  .form-class {
+    @apply border border-slate-200 shadow-sm rounded-sm py-1 px-2 flex gap-2 items-center;
+  }
+
+  .label-class {
+    @apply w-full flex flex-col text-sm font-medium text-slate-400 my-1;
+  }
+
+  input {
+    @apply outline-none !bg-transparent focus:outline-none focus:!bg-transparent focus-within:!bg-transparent;
+  }
+
+  .primary-btn {
+    @apply bg-[#24abff] rounded-sm text-white px-5 py-2;
+  }
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Cairo', sans-serif;
+}
+
+input:checked + label {
+  border-color: black;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.loader {
+  border-top-color: #3498db;
+  -webkit-animation: spinner 1.5s linear infinite;
+  animation: spinner 1.5s linear infinite;
+}
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
